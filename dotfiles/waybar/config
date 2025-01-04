@@ -5,7 +5,7 @@
     "spacing": 4,
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "battery"],
+    "modules-right": ["pulseaudio", "network", "cpu", "memory", "battery", "uptime"],
     
     "hyprland/workspaces": {
         "format": "{icon}",
@@ -66,5 +66,9 @@
             "default": ["󰕿", "󰖀", "󰕾"]
         },
         "on-click": "pavucontrol"
+    },
+    "uptime": {
+        "interval": 60,
+        "format": "Uptime: {days}d {hours}h {minutes}m"
     }
 }
