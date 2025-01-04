@@ -1,0 +1,20 @@
+* {
+    background-image: none;
+}
+window {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+button {
+    all: unset;
+    margin: 2px;
+    font-size: 20px;
+}
+#shutdown {
+    color: #ff4444;
+}
+#reboot {
+    color: #a359ff;
+}
+button:hover {
+    opacity: 0.8;
+}

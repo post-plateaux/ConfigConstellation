@@ -1,0 +1,4 @@
+[manager]
+prepend_keymap = [
+    { on = [ "<k>" ], run = "shell --orphan 'kitty'", desc = "Open kitty terminal here" }
+]
