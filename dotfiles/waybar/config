@@ -22,7 +22,7 @@
         "sort-by-number": true
     },
     "clock": {
-        "format": "{:%H%M} {:%d %^b %Y}"
+        "format": "{:%H%M %d %^b %Y}"
     },
     "cpu": {
         "format": "󰻠 {usage}%",
