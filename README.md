@@ -1,10 +1,10 @@
 # Natural Language Infrastructure as Code (NLIaC)
 
-A revolutionary approach to system configuration that combines the power of Infrastructure as Code (IaC) with natural language processing through AI assistance. This repository represents a new paradigm in managing system configurations - one where you can literally have a conversation to deploy changes to your system.
+A practical approach to system configuration that combines Infrastructure as Code (IaC) with AI assistance. This repository demonstrates how to manage system configurations through natural language conversations while maintaining proper version control and documentation.
 
 ## What Makes This Special?
 
-Traditional dotfiles repositories are static collections of configuration files. This project transforms that concept into a dynamic, AI-powered system configuration platform. By leveraging [aider](https://github.com/paul-gauthier/aider), an AI-powered coding assistant, we can make system changes through natural language conversation while maintaining all the benefits of traditional Infrastructure as Code.
+Traditional dotfiles repositories are static collections of configuration files. This project enhances that concept by using [aider](https://github.com/paul-gauthier/aider), an AI-powered coding assistant, to make system changes through natural language conversation while maintaining all the benefits of traditional Infrastructure as Code.
 
 ## Core Concepts
 
@@ -28,12 +28,10 @@ The aider CLI tool enables:
 - Intelligent understanding of your system's context
 - Immediate feedback and iteration
 - Git integration for version control
-- Preservation of conversation history
 
 ## Repository Structure
 
 - `dotfiles/`: Configuration files for various system components
-- `chime_script/`: System notification scripts
 - Various configuration files for:
   - Window Management (Hyprland)
   - Status Bar (Waybar)
