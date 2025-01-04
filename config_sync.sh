@@ -4,6 +4,14 @@
 REPO_DIR="$(pwd)"
 CONFIG_DIR="$HOME/.config"
 BACKUP_DIR="$REPO_DIR/dotfiles"
+TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+FULL_BACKUP_DIR="$HOME/.config_backup_$TIMESTAMP"
+
+# Check if we're in a git repository
+if [ ! -d .git ]; then
+    echo -e "${RED}Error: Must be run from the root of a git repository${NC}"
+    exit 1
+fi
 
 # Colors for output
 RED='\033[0;31m'
@@ -77,6 +85,19 @@ configs=(
 )
 
 # Main execution
+echo -e "${YELLOW}This will create symbolic links for your config files.${NC}"
+echo -e "${YELLOW}A full backup will be created at: $FULL_BACKUP_DIR${NC}"
+echo -e "${YELLOW}Are you sure you want to continue? [y/N]${NC}"
+read -r response
+if [[ ! "$response" =~ ^[Yy]$ ]]; then
+    echo -e "${RED}Operation cancelled${NC}"
+    exit 1
+fi
+
+echo -e "${YELLOW}Creating full backup of .config directory...${NC}"
+cp -r "$CONFIG_DIR" "$FULL_BACKUP_DIR"
+echo -e "${GREEN}Backup created at: $FULL_BACKUP_DIR${NC}"
+
 echo -e "${GREEN}Starting config sync...${NC}"
 
 for config in "${configs[@]}"; do
