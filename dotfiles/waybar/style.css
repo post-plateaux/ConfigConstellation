@@ -30,7 +30,8 @@ window#waybar {
 #cpu,
 #memory,
 #network,
-#pulseaudio {
+#pulseaudio,
+#custom-uptime {
     padding: 0 10px;
     margin: 4px 3px;
     background: @surface0;

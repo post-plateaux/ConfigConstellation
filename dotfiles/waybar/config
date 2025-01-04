@@ -4,7 +4,7 @@
     "height": 30,
     "spacing": 4,
     "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["clock"],
+    "modules-center": ["clock", "custom/uptime"],
     "modules-right": ["pulseaudio", "network", "cpu", "memory", "battery"],
     
     "hyprland/workspaces": {
@@ -67,4 +67,9 @@
         },
         "on-click": "pavucontrol"
     },
+    "custom/uptime": {
+        "exec": "uptime | awk '{print $3}' | tr ',' ' '",
+        "interval": 60,
+        "format": "󰔟 {}"
+    }
 }
