@@ -22,8 +22,8 @@
         "sort-by-number": true
     },
     "clock": {
-        "format": "{:%I:%M %p}",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%H%M} {:%d %b %Y}",
+        "format-alt": "{:%d %B %Y}"
     },
     "cpu": {
         "format": "󰻠 {usage}%",
