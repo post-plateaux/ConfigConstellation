@@ -50,11 +50,9 @@ sync_config() {
     # Create parent directories if they don't exist
     mkdir -p "$(dirname "$backup_path")"
     
-    # If path doesn't exist in backup yet, copy it
-    if [ ! -e "$backup_path" ]; then
-        cp -r "$path" "$backup_path"
-        echo -e "${GREEN}Copied: $relative_path${NC}"
-    fi
+    # Copy current config to backup location, overwriting if it exists
+    cp -r "$path" "$backup_path"
+    echo -e "${GREEN}Copied: $relative_path${NC}"
     
     # Create symbolic link back to .config
     create_symlink "$backup_path" "$path"
