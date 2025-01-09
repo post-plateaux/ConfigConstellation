@@ -2,3 +2,7 @@
 edit = [
     { run = 'micro "$1"', block = true }
 ]
+
+video = [
+    { run = 'vlc "$1"' }
+]
