@@ -34,7 +34,94 @@
 - 3-finger swipe: Switch workspaces
 
 ## Yazi File Manager
-- k: Open kitty terminal in current directory
+
+### Navigation
+- Arrow keys or h/j/k/l: Navigate files and directories
+- h or ←: Leave current directory (go to parent)
+- l or →: Enter hovered directory
+- j or ↓: Move cursor down
+- k or ↑: Move cursor up
+- K: Seek up 5 units in preview
+- J: Seek down 5 units in preview
+- gg: Move cursor to the top
+- G: Move cursor to the bottom
+- z: Jump to directory using zoxide
+- Z: Jump to directory or reveal file using fzf
+
+### Selection
+- Space: Toggle selection of hovered file/directory
+- v: Enter visual mode (selection mode)
+- V: Enter visual mode (unset mode)
+- Ctrl + a: Select all files
+- Ctrl + r: Inverse selection of all files
+- Esc: Cancel selection
+
+### File Operations
+- o: Open selected files
+- O: Open selected files interactively
+- Enter: Open selected files
+- Shift + Enter: Open selected files interactively
+- Tab: Show file information
+- y: Yank (copy) selected files
+- x: Yank (cut) selected files
+- p: Paste yanked files
+- P: Paste yanked files (overwrite if exists)
+- Y/X: Cancel yank status
+- d: Trash selected files
+- D: Permanently delete selected files
+- a: Create file (end with / for directories)
+- r: Rename selected file(s)
+- .: Toggle hidden files visibility
+- ;: Run shell command
+- :: Run shell command (block until finished)
+- -: Symlink absolute path of yanked files
+- _: Symlink relative path of yanked files
+- Ctrl + -: Hardlink yanked files
+
+### Copy Paths
+- cc: Copy file path
+- cd: Copy directory path
+- cf: Copy filename
+- cn: Copy filename without extension
+
+### File Finding/Filtering
+- f: Filter files
+- /: Find next file
+- ?: Find previous file
+- n: Go to next found
+- N: Go to previous found
+- s: Search files by name (using fd)
+- S: Search files by content (using ripgrep)
+- Ctrl + s: Cancel ongoing search
+
+### Sorting
+- ,m: Sort by modified time
+- ,M: Sort by modified time (reverse)
+- ,b: Sort by birth time
+- ,B: Sort by birth time (reverse)
+- ,e: Sort by file extension
+- ,E: Sort by file extension (reverse)
+- ,a: Sort alphabetically
+- ,A: Sort alphabetically (reverse)
+- ,n: Sort naturally
+- ,N: Sort naturally (reverse)
+- ,s: Sort by size
+- ,S: Sort by size (reverse)
+- ,r: Sort randomly
+
+### Tabs
+- t: Create new tab with current directory
+- 1-9: Switch to numbered tab
+- [: Switch to previous tab
+- ]: Switch to next tab
+- {: Swap current tab with previous
+- }: Swap current tab with next
+- Ctrl + c: Close current tab
+
+### Exit
+- q: Quit (changes directory)
+- Q: Quit (keeps directory)
+- ~: Open help menu
 
 ## Kitty Terminal
 ### Mouse Actions
