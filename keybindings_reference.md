@@ -79,10 +79,10 @@
 - Ctrl + -: Hardlink yanked files
 
 ### Copy Paths
-- cc: Copy file path
-- cd: Copy directory path
-- cf: Copy filename
-- cn: Copy filename without extension
+- cc: Copy absolute file path to clipboard
+- cd: Copy current directory path to clipboard
+- cf: Copy filename with extension to clipboard
+- cn: Copy filename without extension to clipboard
 
 ### File Finding/Filtering
 - f: Filter files
