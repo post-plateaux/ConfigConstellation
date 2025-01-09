@@ -7,6 +7,7 @@
 - Super + Q: Kill active window
 - Super + Space: Launch fuzzel (app launcher)
 - Super + E: Open yazi file manager in kitty
+- Super + F: Toggle window fullscreen (move to own workspace)
 - Super + Shift + Q: Exit Hyprland
 - Super + L: Lock screen
 - Super + Shift + P: Open power menu (wlogout)
