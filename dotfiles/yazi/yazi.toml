@@ -3,6 +3,7 @@ edit = [
     { run = 'micro "$1"', block = true }
 ]
 
-[[opener]]
-mime_regex = "^video/*"
-command = "vlc"
+[opener.rules]
+video = [
+    { run = "vlc \"$1\"" }
+]
