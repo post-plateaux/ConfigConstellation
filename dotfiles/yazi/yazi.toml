@@ -3,7 +3,6 @@ edit = [
     { run = 'micro "$1"', block = true }
 ]
 
-[[opener.rules]]
-name = "video"
-regex = "(?i)\\.(mp4|avi|mkv|mov|wmv|flv|webm)$"
-cmd = "vlc"
+video = [
+    { run = 'vlc "$1"' }
+]
