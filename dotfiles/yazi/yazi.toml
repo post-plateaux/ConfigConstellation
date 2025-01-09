@@ -2,8 +2,3 @@
 edit = [
     { run = 'micro "$1"', block = true }
 ]
-
-[opener.rules]
-"^video/.*" = [
-    { run = "vlc \"$1\"", desc = "Open with VLC" }
-]
