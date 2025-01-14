@@ -3,6 +3,9 @@
 ## Hyprland Window Manager
 
 ### Essential Controls
+- Print Screen: Capture selected area (saves to ~/Pictures/Screenshots and copies to clipboard)
+- Super + Print Screen: Capture active window (saves to ~/Pictures/Screenshots and copies to clipboard)
+- Super + Shift + Print Screen: Capture full screen (saves to ~/Pictures/Screenshots and copies to clipboard)
 - Super + Return: Open kitty terminal
 - Super + Q: Kill active window
 - Super + Space: Launch fuzzel (app launcher)
