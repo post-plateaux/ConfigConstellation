@@ -9,6 +9,10 @@ next_workspace=$((current_max + 1))
 # Switch to the new workspace
 hyprctl dispatch workspace $next_workspace
 
+# Small delay to ensure workspace switch completes
+sleep 0.5
+
+# Start VM and viewer in the new workspace
 nohup virsh start win11 > /dev/null 2>&1 &
 sleep 2
 nohup virt-viewer --full-screen win11 > /dev/null 2>&1 &
