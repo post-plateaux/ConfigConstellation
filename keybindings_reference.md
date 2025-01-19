@@ -3,6 +3,7 @@
 ## Hyprland Window Manager
 
 ### Essential Controls
+- Super + Alt + V: Launch Windows VM
 - Print Screen: Capture selected area (saves to ~/Pictures/Screenshots and copies to clipboard)
 - Super + Print Screen: Capture active window (saves to ~/Pictures/Screenshots and copies to clipboard)
 - Super + Shift + Print Screen: Capture full screen (saves to ~/Pictures/Screenshots and copies to clipboard)
