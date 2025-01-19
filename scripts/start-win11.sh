@@ -1,18 +1,12 @@
 #!/bin/bash
 
-# Get the highest workspace number currently in use
-current_max=$(hyprctl workspaces | grep ID | awk '{print $3}' | sort -n | tail -n1)
-
-# Use the next number, or 1 if no workspaces exist
-next_workspace=$((current_max + 1))
-
-# Switch to the new workspace first
-hyprctl dispatch workspace "$next_workspace"
-
-# Wait for workspace switch to complete
-sleep 0.5
-
-# Start VM and viewer in the new workspace
+# Start VM
 nohup virsh start win11 > /dev/null 2>&1 &
 sleep 2
+
+# Start viewer in special workspace
 nohup virt-viewer --full-screen win11 > /dev/null 2>&1 &
+
+# Switch to special workspace
+sleep 1
+hyprctl dispatch workspace special
