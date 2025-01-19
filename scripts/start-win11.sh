@@ -6,17 +6,13 @@ current_max=$(hyprctl workspaces | grep ID | awk '{print $3}' | sort -n | tail -
 # Use the next number, or 1 if no workspaces exist
 next_workspace=$((current_max + 1))
 
-# Start VM first
+# Switch to the new workspace first
+hyprctl dispatch workspace "$next_workspace"
+
+# Wait for workspace switch to complete
+sleep 0.5
+
+# Start VM and viewer in the new workspace
 nohup virsh start win11 > /dev/null 2>&1 &
 sleep 2
-
-# Start viewer and wait for window to appear
 nohup virt-viewer --full-screen win11 > /dev/null 2>&1 &
-sleep 1
-
-# Get the virt-viewer window and move it
-window_id=$(hyprctl clients | grep "virt-viewer" -B 2 | grep "Window" | awk '{print $2}')
-hyprctl dispatch movetoworkspace "$next_workspace,address:$window_id"
-
-# Finally switch to the workspace
-hyprctl dispatch workspace "$next_workspace"
