@@ -1,11 +1,26 @@
 #!/bin/bash
 
-# Ensure default network is running first
+# Ensure default network exists and is running
+if ! virsh net-list --all | grep -q "default"; then
+    echo "Error: Default network not found"
+    exit 1
+fi
+
+# Start the network if it's not active
 if ! virsh net-list --all | grep -q "default.*active"; then
     echo "Starting default network..."
-    virsh net-start default
-    # Wait a moment for network to fully initialize
-    sleep 2
+    if ! sudo virsh net-start default; then
+        echo "Error: Failed to start default network"
+        exit 1
+    fi
+    echo "Waiting for network initialization..."
+    sleep 3
+fi
+
+# Verify network is now running
+if ! virsh net-list --all | grep -q "default.*active"; then
+    echo "Error: Network failed to start properly"
+    exit 1
 fi
 
 # Check if VM is running
