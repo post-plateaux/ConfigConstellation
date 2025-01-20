@@ -1,15 +1,11 @@
 #!/bin/bash
 
-# Start the network
-echo "Starting network..."
-virsh net-start default || { echo "Failed to start network"; exit 1; }
-echo "Waiting for network to initialize..."
-sleep 2
-
-# Verify network started
+# Ensure network is active
 if ! virsh net-list --all | grep -q "default.*active"; then
-    echo "Error: Network failed to start"
-    exit 1
+    echo "Starting network..."
+    virsh net-start default || { echo "Failed to start network"; exit 1; }
+    echo "Waiting for network to initialize..."
+    sleep 2
 fi
 
 # Switch to workspace 99 first
