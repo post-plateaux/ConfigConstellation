@@ -1,5 +1,5 @@
 #!/bin/bash
-state=$(sudo tlp-stat -p | grep "scaling_governor" | head -n 1 | awk '{print $5}')
+state=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
 if [ "$state" = "performance" ]; then
     echo "󰓅"  # Icon for performance mode
 elif [ "$state" = "powersave" ]; then
