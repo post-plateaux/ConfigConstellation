@@ -1,34 +1,11 @@
 #!/bin/bash
 
-# Debug: Show initial network status
-echo "Current network status:"
-virsh net-list --all
-
-# Ensure default network exists and is running
-if ! virsh net-list --all | grep -q "default"; then
-    echo "Error: Default network not found"
-    exit 1
-fi
-
-# Start the network if it's not active
+# Start the network if needed
 if ! virsh net-list --all | grep -q "default.*active"; then
     echo "Starting default network..."
-    if ! virsh net-start default; then
-        echo "Error: Failed to start default network"
-        exit 1
-    fi
-    echo "Waiting for network initialization..."
-    sleep 5
+    virsh net-start default
+    sleep 2
 fi
-
-# Verify network is now running
-if ! virsh net-list --all | grep -q "default.*active"; then
-    echo "Error: Network failed to start properly"
-    exit 1
-fi
-
-echo "Network status after initialization:"
-virsh net-list --all
 
 # Check if VM is running
 if virsh domstate win11 2>/dev/null | grep -q "running"; then
