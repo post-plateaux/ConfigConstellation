@@ -3,8 +3,11 @@
 # Start the network if needed
 if ! virsh net-list --all | grep -q "default.*active"; then
     echo "Starting default network..."
-    virsh net-start default
+    virsh net-start default || { echo "Failed to start network"; exit 1; }
+    echo "Waiting for network to initialize..."
     sleep 2
+    # Verify network started
+    virsh net-list --all
 fi
 
 # Check if VM is running
