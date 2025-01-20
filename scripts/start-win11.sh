@@ -12,16 +12,10 @@ if ! virsh net-list --all | grep -q "default.*active"; then
     exit 1
 fi
 
-# Check if VM is running
-if virsh domstate win11 2>/dev/null | grep -q "running"; then
-    # VM is running, shut it down gracefully
-    virsh shutdown win11
-else
-    # Switch to workspace 99 first
-    hyprctl dispatch workspace 99
+# Switch to workspace 99 first
+hyprctl dispatch workspace 99
 
-
-    # Start VM
+# Start VM
     echo "Starting Windows VM..."
     virsh start win11 > /dev/null 2>&1
 
