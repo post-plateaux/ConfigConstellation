@@ -31,7 +31,8 @@ window#waybar {
 #memory,
 #network,
 #pulseaudio,
-#custom-uptime {
+#custom-uptime,
+#custom-tlp {
     padding: 0 10px;
     margin: 4px 3px;
     background: @surface0;

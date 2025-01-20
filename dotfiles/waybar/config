@@ -5,7 +5,7 @@
     "spacing": 4,
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock", "custom/uptime"],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "battery"],
+    "modules-right": ["pulseaudio", "network", "cpu", "memory", "custom/tlp", "battery"],
     
     "hyprland/workspaces": {
         "format": "{icon}",
@@ -70,5 +70,11 @@
         "exec": "uptime | awk '{print $3}' | tr ',' ' '",
         "interval": 60,
         "format": "󰔟 {}"
+    },
+    "custom/tlp": {
+        "exec": "~/.config/waybar/scripts/get-tlp-state.sh",
+        "interval": 5,
+        "format": "{} ",
+        "tooltip": false
     }
 }
