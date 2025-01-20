@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Ensure default network is running first
+if ! virsh net-list --all | grep -q "default.*active"; then
+    echo "Starting default network..."
+    virsh net-start default
+    # Wait a moment for network to fully initialize
+    sleep 2
+fi
+
 # Check if VM is running
 if virsh domstate win11 2>/dev/null | grep -q "running"; then
     # VM is running, shut it down gracefully
@@ -8,11 +16,6 @@ else
     # Switch to workspace 99 first
     hyprctl dispatch workspace 99
 
-    # Ensure default network is running
-    if ! virsh net-list --all | grep -q "default.*active"; then
-        echo "Starting default network..."
-        virsh net-start default
-    fi
 
     # Start VM
     echo "Starting Windows VM..."
